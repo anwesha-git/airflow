@@ -62,7 +62,7 @@ def sparkify_data_pipeline():
         truncate=True
     )
 
-    #loading data from staging tables to songplays table
+    #loading data from staging tables to user table
     load_user_dimension_table = LoadDimensionOperator(
         task_id='Load_user_dim_table',
         redshift_conn_id='redshift',
@@ -71,7 +71,7 @@ def sparkify_data_pipeline():
         truncate=True
     )
 
-    #loading data from staging tables to songplays table
+    #loading data from staging tables to song table
     load_song_dimension_table = LoadDimensionOperator(
         task_id='Load_song_dim_table',
         redshift_conn_id='redshift',
@@ -80,7 +80,7 @@ def sparkify_data_pipeline():
         truncate=True
     )
 
-    #loading data from staging tables to songplays table
+    #loading data from staging tables to artist table
     load_artist_dimension_table = LoadDimensionOperator(
         task_id='Load_artist_dim_table',
         redshift_conn_id='redshift',
@@ -89,7 +89,7 @@ def sparkify_data_pipeline():
         truncate=True
     )
 
-    #loading data from staging tables to users table
+    #loading data from staging tables to time table
     load_time_dimension_table = LoadDimensionOperator(
         task_id='Load_time_dim_table',
         redshift_conn_id='redshift',
@@ -98,6 +98,7 @@ def sparkify_data_pipeline():
         truncate=True
     )
 
+    #running quality checks on tables
     run_quality_checks = DataQualityOperator(
         task_id='Run_data_quality_checks',
         redshift_conn_id="redshift",
