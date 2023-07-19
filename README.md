@@ -40,16 +40,16 @@ airflow<br />
 ├── dags<br />
 │   └── sparkify_data_pipeline.py<br />
 └── plugins<br />
-    ├── operators<br />
-    │   ├── create_table.py<br />
-    │   ├── stage_redshift.py<br />
-    │   ├── load_fact.py<br />
-    │   ├── load_dimension.py<br />
-    │   └── data_quality.py   <br />
-    └── helpers<br />
-        ├── sql_queries.py <br />
-        ├── sql_create_queries.py <br />
-        └── create_tables.py <br />
+     ├── operators<br />
+     │   ├── create_table.py<br />
+     │   ├── stage_redshift.py<br />
+     │   ├── load_fact.py<br />
+     │   ├── load_dimension.py<br />
+     │   └── data_quality.py   <br />
+     └── helpers<br />
+         ├── sql_queries.py <br />
+         ├── sql_create_queries.py <br />
+         └── create_tables.py <br />
         
 ### Airflow Pipeline
 The DAG should appear as "sparkify_data_pipeline".
