@@ -48,8 +48,8 @@ airflow<br />
     │   └── data_quality.py   <br />
     └── helpers<br />
         └── sql_queries.py <br />
-        └── sql_create_queries.py <br />   
-        └── create_tables.py <br />  
+        └── sql_create_queries.py <br />
+        └── create_tables.py <br />
         
 ### Airflow Pipeline
 The DAG should appear as "sparkify_data_pipeline".
