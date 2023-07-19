@@ -36,30 +36,32 @@ This third file s3://udacity-dend/log_json_path.json contains the meta informati
 ## Project Template
 The project template includes below structure:
 
-├── create_tables.sql
-├── dags
-│   ├── create_tables.py
-│   └── sparkify_data_pipeline.py
-└── plugins
-    ├── operators
-    │   ├── create_table.py
-    │   ├── stage_redshift.py
-    │   ├── load_fact.py
-    │   ├── load_dimension.py
-    │   └── data_quality.py   
-    └── helpers
-        └── sql_queries.py 
+├── create_tables.sql<br />
+├── dags<br />
+│   ├── create_tables.py<br />
+│   └── sparkify_data_pipeline.py<br />
+└── plugins<br />
+    ├── operators<br />
+    │   ├── create_table.py<br />
+    │   ├── stage_redshift.py<br />
+    │   ├── load_fact.py<br />
+    │   ├── load_dimension.py<br />
+    │   └── data_quality.py   <br />
+    └── helpers<br />
+        └── sql_queries.py <br />
         
 ### Airflow Pipeline
 The DAG should appear as "sparkify_data_pipeline".
 On the pipeline, the following sequence will be followed:
-1. Both the staging data tables will be copied from S3 to Redshift
+1. Both the staging data tables will be copied from S3 to Redshift<br />
    `staging_song` and `staging_event`
-2. The Fact table will be loaded from both staging tables to redshift
+2. The Fact table will be loaded from both staging tables to redshift<br />
+    There is a truncate parameter, if set true, it will do truncate load, else it will append<br />
    `songplays`
-3. The dimension tables will get loaded from both staging tables to redshift
+3. The dimension tables will get loaded from both staging tables to redshift<br />
+    There is a truncate parameter, if set true, it will do truncate load, else it will append<br />
    `songs`, `artists`, `time`, `users`
-4. Quality check will be run to ensure the data is loaded successfully
+4. Quality check will be run to ensure the data is loaded successfully<br />
 
 ![image](https://github.com/anwesha-git/airflow/assets/122990634/2d2a8868-6cf5-4e30-b9bb-b773b9fc98dc)
    
