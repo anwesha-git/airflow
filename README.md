@@ -61,5 +61,6 @@ On the pipeline, the following sequence will be followed:
    `songs`, `artists`, `time`, `users`
 4. Quality check will be run to ensure the data is loaded successfully
 
+![image](https://github.com/anwesha-git/airflow/assets/122990634/2d2a8868-6cf5-4e30-b9bb-b773b9fc98dc)
    
 
