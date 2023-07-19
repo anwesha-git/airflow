@@ -12,7 +12,7 @@ class StageToRedshiftOperator(BaseOperator):
         FROM '{}'
         ACCESS_KEY_ID '{}'
         SECRET_ACCESS_KEY '{}'
-		IGNOREHEADER {}
+        IGNOREHEADER {}
         DELIMITER '{}'
         REGION '{}'
         JSON '{}';
@@ -25,7 +25,7 @@ class StageToRedshiftOperator(BaseOperator):
                  s3_bucket="",
                  s3_key="",
                  aws_credentials_id="",
-				 delimiter=",",
+                 delimiter=",",
                  ignore_headers=1,
                  region="",
                  json_path = "",
@@ -37,7 +37,7 @@ class StageToRedshiftOperator(BaseOperator):
         self.s3_bucket = s3_bucket
         self.s3_key = s3_key
         self.aws_credentials_id = aws_credentials_id
-		self.delimiter = delimiter
+        self.delimiter = delimiter
         self.ignore_headers = ignore_headers
         self.region= region
         self.json_path = json_path        
@@ -46,7 +46,7 @@ class StageToRedshiftOperator(BaseOperator):
     def execute(self, context):
         self.log.info("Executing StageToRedshiftOperator")
         self.log.info("Creating AWS Hook for Credentials")
-		aws_hook = AwsHook(self.aws_credentials_id)
+        aws_hook = AwsHook(self.aws_credentials_id)
         credentials = aws_hook.get_credentials()
         self.log.info("Creating Postgres SQL Hook for Redshift")
         redshift = PostgresHook(postgres_conn_id=self.redshift_conn_id)
